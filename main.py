@@ -70,9 +70,9 @@ except:
 
 TIME_ZONE = getConfig('TIME_ZONE') or 'Asia/Calcutta'
 
-HEADER_MSG = getConfig('HEADER_MSG') or "🤖 <a href='https://github.com/junedkh/mirror-bot-status'><b>Status</b></a> <b>JMDKH Mirror Bots</b> 🤖"
+HEADER_MSG = getConfig('HEADER_MSG') or "🔰 <b>OP Leech Bots Status 🇵🇰</b> 🔰"
 
-FOOTER_MSG = getConfig('FOOTER_MSG') or "🫂 Join: https://t.me/+3XSC23Veq2s2MmRl\n\n<b>⚒ Powered by</b> <a href='https://t.me/JMDKH_Team'>JMDKH Team ❤️</a>"
+FOOTER_MSG = getConfig('FOOTER_MSG') or "♻️ Auto Refreshing After 10 Sec\n<b>🦋 Powered by</b> <a href='https://t.me/devia_angel'>Ａｎｇｅｌ ❤️🧚‍♀️</a>"
 
 SIZE_UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
 
@@ -145,7 +145,7 @@ def delete_channel(channel):
 
 def footer():
     msg = f"\n{FOOTER_MSG}\n"
-    msg += f"⏱ Update {datetime.now(utc).astimezone(timezone(TIME_ZONE)).strftime('%d/%m %H:%M:%S')} {TIME_ZONE}"
+    msg += f"🐋 Last Update {datetime.now(utc).astimezone(timezone(TIME_ZONE)).strftime('%d/%m %H:%M:%S')} {TIME_ZONE}"
     return msg
 
 
@@ -196,7 +196,7 @@ def bot_status():
 
 def edit_bot_status():
     s_msg, active_bots, allbots = bot_status()
-    msg = f'\n🧲 <b>Available Bots</b>: {active_bots}/{allbots} \n'
+    msg = f'\n☔️ <b>Available Bots</b>: {active_bots}/{allbots} \n'
     msg += s_msg
     return msg
 
@@ -211,10 +211,10 @@ def main():
     try:
         for channel in _channels:
             LOGGER.info(f"Updating {channel['chat_id']}: {channel['message_id']}")
-            sleep(0.5)
-            editMessage(msg.format("<code>Updating...</code>"), channel)
+            sleep(5)
+            editMessage(msg.format("<code>𝙐𝙥𝙙𝙖𝙩𝙞𝙣𝙜...𝙒𝙖𝙞𝙩</code>"), channel)
             _status = msg.format(status)
-            sleep(0.5)
+            sleep(5)
             if len(_status.encode()) < 4000:
                 editMessage(_status, channel)
             else:
