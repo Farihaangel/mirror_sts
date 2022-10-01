@@ -211,10 +211,10 @@ def main():
     try:
         for channel in _channels:
             LOGGER.info(f"Updating {channel['chat_id']}: {channel['message_id']}")
-            sleep(5)
+            sleep(3)
             editMessage(msg.format("<code>𝙐𝙥𝙙𝙖𝙩𝙞𝙣𝙜...𝙒𝙖𝙞𝙩</code>"), channel)
             _status = msg.format(status)
-            sleep(5)
+            sleep(3)
             if len(_status.encode()) < 4000:
                 editMessage(_status, channel)
             else:
